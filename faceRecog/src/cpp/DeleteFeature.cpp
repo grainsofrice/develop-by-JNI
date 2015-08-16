@@ -7,9 +7,9 @@ typedef int(__stdcall *DeleteFeature)(int, int);
 
 JNIEXPORT jint JNICALL Java_getFunction_DeleteFeature(JNIEnv *, jobject, 
 	jint dbId, jint usid) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k=0;
 		DeleteFeature df = (DeleteFeature) GetProcAddress (hDLL, "_PDB_DeleteFeature@8");

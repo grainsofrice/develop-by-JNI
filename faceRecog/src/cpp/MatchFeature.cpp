@@ -7,9 +7,9 @@ typedef int(_stdcall *MatchFeature)(int,unsigned int,short,unsigned char * ,unsi
 
 JNIEXPORT jint JNICALL Java_getFunction_MatchFeature(JNIEnv *env, jobject, 
 	jint dbId, jint threshold, jshort fsize, jbyteArray feature, jshort num, jintArray candidate, jshortArray score) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k=0;
 		MatchFeature mf = (MatchFeature) GetProcAddress (hDLL, "_PDB_MatchFeature@28");

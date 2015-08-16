@@ -7,9 +7,9 @@ typedef int(_stdcall *StoreFeature)(int, short, unsigned char*);
 
 JNIEXPORT jint JNICALL Java_getFunction_StoreFeature(JNIEnv *env, jobject, 
 	jint dbId, jshort fsize, jbyteArray feature) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k=0;
 		StoreFeature sf = (StoreFeature) GetProcAddress (hDLL, "_PDB_StoreFeature@12");

@@ -71,9 +71,9 @@ JNIEXPORT jint JNICALL Java_getFunction_AgrRecogImg(JNIEnv *env, jobject,
 		pad.info->faceInfo.eye_ly = env->GetShortField(jopfp, jfeye_ly);
 		pad.info->faceInfo.eye_rx = env->GetShortField(jopfp, jfeye_rx);
 		pad.info->faceInfo.eye_ry = env->GetShortField(jopfp, jfeye_ry);
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll"); 
+		HINSTANCE hDLL = LoadLibrary("face.dll"); 
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k;
 		AgrRecogImg ari = (AgrRecogImg) GetProcAddress(hDLL, "_PFD_AgrRecogImg@12"); 

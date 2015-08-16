@@ -7,9 +7,9 @@ typedef int(__stdcall *ChangeFeature)(int, int, short, unsigned char *);
 
 JNIEXPORT jint JNICALL Java_getFunction_ChangeFeature(JNIEnv *env, jobject,
 	jint dbId, jint usid, jshort fsize, jbyteArray feature) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll");
+			printf("cannot get face.dll");
 		}
 		int k = 0;
 		ChangeFeature cf = (ChangeFeature) GetProcAddress (hDLL,"_PDB_ChangeFeature@16");

@@ -64,9 +64,9 @@ JNIEXPORT jint JNICALL Java_getFunction_BlinkRecogImg(JNIEnv *env, jobject,
 		pbd.info->faceInfo.eye_ly = env->GetShortField(jopfp, jfeye_ly);
 		pbd.info->faceInfo.eye_rx = env->GetShortField(jopfp, jfeye_rx);
 		pbd.info->faceInfo.eye_ry = env->GetShortField(jopfp, jfeye_ry);
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll"); 
+		HINSTANCE hDLL = LoadLibrary("face.dll"); 
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k;
 		BlinkRecogImg bri = (BlinkRecogImg) GetProcAddress(hDLL, "_PFD_BlinkRecogImg@12"); 

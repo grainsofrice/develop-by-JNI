@@ -62,9 +62,9 @@ JNIEXPORT jint JNICALL Java_getFunction_SmileRecogImg(JNIEnv *env, jobject,
 		psd.info->faceInfo.eye_ly = env->GetShortField(jopfp, jfeye_ly);
 		psd.info->faceInfo.eye_rx = env->GetShortField(jopfp, jfeye_rx);
 		psd.info->faceInfo.eye_ry = env->GetShortField(jopfp, jfeye_ry);
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll"); 
+		HINSTANCE hDLL = LoadLibrary("face.dll"); 
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll!");
+			printf("cannot get face.dll!");
 		}
 		int k;
 		SmileRecogImg sri = (SmileRecogImg) GetProcAddress(hDLL, "_PFD_SmileRecogImg@12"); 

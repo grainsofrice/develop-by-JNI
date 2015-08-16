@@ -7,9 +7,9 @@ typedef int(__stdcall *DeleteDataBase)(int);
 
 JNIEXPORT jint JNICALL Java_getFunction_DeleteDataBase(JNIEnv *, jobject,
 	jint dbId) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll");	
+			printf("cannot get face.dll");	
 		}
 		int k=0;
 		DeleteDataBase ddb = (DeleteDataBase) GetProcAddress(hDLL, "_PDB_DeleteDataBase@4");

@@ -7,9 +7,9 @@ typedef int(__stdcall *AddDataBase)(int);
 
 JNIEXPORT jint JNICALL Java_getFunction_AddDataBase(JNIEnv *, jobject, 
 	jint maxFaceNum) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll");
+			printf("cannot get face.dll");
 		}
 		int k = 0;
 		AddDataBase adb = (AddDataBase) GetProcAddress(hDLL,"_PDB_AddDataBase@4");

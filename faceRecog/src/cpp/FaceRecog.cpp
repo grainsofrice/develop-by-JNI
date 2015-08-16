@@ -97,7 +97,7 @@ JNIEXPORT jint JNICALL Java_getFunction_FaceRecog(JNIEnv *env, jobject,
 		pfd.info->faceInfo.eye_ly = env->GetShortField(jopfp, jfeye_ly);
 		pfd.info->faceInfo.eye_rx = env->GetShortField(jopfp, jfeye_rx);
 		pfd.info->faceInfo.eye_ry = env->GetShortField(jopfp, jfeye_ry);
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
 			printf("cannot get DLL!");
 		}

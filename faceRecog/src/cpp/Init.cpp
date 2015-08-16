@@ -7,9 +7,9 @@ typedef int(_stdcall *Init)(int);
 
 JNIEXPORT jint JNICALL Java_getFunction_Init(JNIEnv *, jobject, 
 	jint imgSize) {
-		HINSTANCE hDLL = LoadLibrary("EVAL_x86_Accuracy.dll");
+		HINSTANCE hDLL = LoadLibrary("face.dll");
 		if(!hDLL) {
-			printf("cannot get EVAL_x86_Accuracy.dll");
+			printf("cannot get face.dll");
 		}
 		int k = 0;
 		Init ini = (Init) GetProcAddress(hDLL, "_PFD_Init@4 ");
